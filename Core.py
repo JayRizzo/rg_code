@@ -56,4 +56,4 @@ if len(argv) == 2:
         print("Unknown Faction: {}.".format(argv[1].__str__()))
 
 elif len(argv) > 2:
-    exit('Unknown Extra Arguments: {}'.format(argv[2].__str__()))
+    exit('Unknown Extra Arguments: {}'.format(argv[2:].__str__()))

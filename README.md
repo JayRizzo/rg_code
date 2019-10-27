@@ -33,6 +33,7 @@ So, to learn some things in the process I have created these:
 Call the `Core.py` file like so:
 #### Must Specify A Faction (Fairy, Elven, Angel, Goblin, Undead, Demon, Titan, Druid, Faceless, Mercenary or clickinupgrades).
 
+```bash
     python3 class_act/Core.py Fairy
     python3 class_act/Core.py Elven
     python3 class_act/Core.py Angel
@@ -52,5 +53,6 @@ Call the `Core.py` file like so:
 
     # This only buys upgrades and make money
     python3 class_act/Core.py clickinupgrades
+```
 
 * `faction_research.md` is my log on all the different ways I have used to play the game for research and mercenaries go.  (in game verbiage)

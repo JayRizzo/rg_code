@@ -12,6 +12,9 @@ import random
 from detectwindowsize import DetectWindowSize
 
 from pyautogui import click
+from pyautogui import easeInOutQuad
+
+CLICK_SPEED = 0.037
 
 
 def strightclickin(count_me=50):
@@ -23,8 +26,9 @@ def strightclickin(count_me=50):
     click(int((x_cordinate)) + 0,
           int((y_cordinate)) + 0,
           clicks=count_me,
-          interval=0.037,
-          button='left'
+          interval=CLICK_SPEED,
+          button='left',
+          tween=easeInOutQuad
           )
 
 
@@ -48,8 +52,9 @@ def clickmove(count_me=50):
         click(int((x_cordinate)) + (random.randint(-25, 25)),
               int((y_cordinate)) + (random.randint(-25, 25)),
               clicks=_interval,
-              interval=0.037,
-              button='left'
+              interval=CLICK_SPEED,
+              button='left',
+              tween=easeInOutQuad
               )
 
         count += _interval

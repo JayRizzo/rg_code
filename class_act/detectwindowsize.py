@@ -44,28 +44,29 @@ class DetectWindowSize():
             return
         elif str(size()) == 'Size(width=1920, height=1080)':
             # TV Screen Using Thunderbolt to HDMI.
-            self.x_cordinate = int(620)
-            self.y_cordinate = int(620)
+            self.x_cordinate = int(560)
+            self.y_cordinate = int(430)
             self.adjustments = int(60)
             self.size = (1920, 1080)
             return
         else:
-            print('No Setting for screen size: {}'.format(size()))
+            print('No Setting for this screen size: {}'.format(size()))
             exit()
 
     @property
     def windowsize(self):
         """Print WindowSize."""
+        print("Screen Size: {}".format(self.size))
         return self.size
 
 
 if __name__ == "__main__":
     print("{} has been called from {}".format(path.basename(__file__),
                                               filename))
-    print('Screen Size: ' + str(size()))
+    print("Screen Size: {}".format(size()))
     D = DetectWindowSize()
     DetectWindowSize.main(D)
-    print('Screen Size: {}'.format(D))
+    print("Screen Size: {}".format(D))
     print("x_cordinate: {}".format(D.x_cordinate))
     print("y_cordinate: {}".format(D.y_cordinate))
     print("adjustments: {}".format(D.adjustments))

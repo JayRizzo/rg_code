@@ -1,178 +1,53 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
-"""The Module Has Been Built for the Steam Game 'Realm Grinder'."""
+"""The Module buybuildings is Built for the Steam Game 'Realm Grinder'.
+
+Buy all available Buildings.
+"""
 # =============================================================================
-import random
+from random import choice
 
 from detectwindowsize import DetectWindowSize
 
-import pyautogui
+from pyautogui import click
 
-DETECTWS = DetectWindowSize()
-DetectWindowSize.main(DETECTWS)
-X_CORDINATE = 900
-Y_CORDINATE = 140
-ADJUSTMENTS = int((DETECTWS.adjustments))
-BUTTON_SPEED = 0.005
-# BUTTON_SPEED = 0.0315
+detectws = DetectWindowSize()
+DetectWindowSize.main(detectws)
 
-
-def buyrandombuildings(buy_clicks=0):
-    """Docs."""
-    randombuildings = [
-        buy_first,
-        buy_second,
-        buy_third,
-        buy_fourth,
-        buy_fifth,
-        buy_sixth,
-        buy_seventh,
-        buy_eighth,
-        buy_nineth,
-        buy_tenth,
-        buy_eleventh,
-    ]
-    return random.choice(randombuildings)(buy_clicks)
+ADJUSTMENTS = int(detectws.adjustments)
+X_CORDINATE = [900, ]
+Y_CORDINATE = [140, 200, 260, 320, 380, 440, 500, 560, 620, 680, 740, ]
+CLICK_SPEED = 0.005
 
 
-def buy_allbuildings(buy_clicks=0):
-    """PlaceHolder."""
-    # print("%s Buying all available buildings." % (time.ctime()))
-    buy_first(buy_clicks)
-    buy_second(buy_clicks)
-    buy_third(buy_clicks)
-    buy_fourth(buy_clicks)
-    buy_fifth(buy_clicks)
-    buy_sixth(buy_clicks)
-    buy_seventh(buy_clicks)
-    buy_eighth(buy_clicks)
-    buy_nineth(buy_clicks)
-    buy_tenth(buy_clicks)
-    buy_eleventh(buy_clicks)
+def buyrandombuildings(clicks=0):
+    """The Module buy all buildings at random."""
+    randombuildingclicks = clicks + 0
+    selectedz = choice(Y_CORDINATE)
+    click(X_CORDINATE[0], selectedz + ADJUSTMENTS, clicks, CLICK_SPEED)
+    # print("buyrandombuildings: {}".format(clicks))
+    return randombuildingclicks
 
 
-def buy_allbuildings_rev(buy_clicks=0):
-    """PlaceHolder."""
-    # print("%s Buying all available buildings reverse." % (time.ctime()))
-    buy_eleventh(buy_clicks)
-    buy_tenth(buy_clicks)
-    buy_nineth(buy_clicks)
-    buy_eighth(buy_clicks)
-    buy_seventh(buy_clicks)
-    buy_sixth(buy_clicks)
-    buy_fifth(buy_clicks)
-    buy_fourth(buy_clicks)
-    buy_third(buy_clicks)
-    buy_second(buy_clicks)
-    buy_first(buy_clicks)
+def buybuildings(clicks):
+    """Module To Buy All Buildings (Farm to Hall of Legends)."""
+    total_clicks = 0
+    clicks += 0
+    for i in Y_CORDINATE:
+        click(X_CORDINATE[0], i + ADJUSTMENTS, clicks, CLICK_SPEED)
+    total_clicks = clicks * len(Y_CORDINATE)
+    # print("buybuildings: {}".format(clicks))
+    return total_clicks
 
 
-def buy_first(buy_clicks=0):
-    """The Module Has Been Built to buy # FARMS (1)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 0 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
-
-
-def buy_second(buy_clicks=0):
-    """The Module Has Been Built to buy # INNS (2)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 60 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
-
-
-def buy_third(buy_clicks=0):
-    """The Module Has Been Built to buy # BLACK SMITH (3)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 120 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
-
-
-def buy_fourth(buy_clicks=0):
-    """The Module Has Been Built to buy # SLAVE PEN (4)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 180 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
-
-
-def buy_fifth(buy_clicks=0):
-    """The Module Has Been Built to buy # ORCISH ARENA (5)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 240 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
-
-
-def buy_sixth(buy_clicks=0):
-    """The Module Has Been Built to buy # WITCH CONCLAVE (6)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 300 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
-
-
-def buy_seventh(buy_clicks=0):
-    """The Module Has Been Built to buy # DARK TEMPLE (7)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 360 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
-
-
-def buy_eighth(buy_clicks=0):
-    """The Module Has Been Built to buy # NECROPOLIS (8)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 420 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
-
-
-def buy_nineth(buy_clicks=0):
-    """The Module Has Been Built to buy # EVIL FORTRESS (9)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 480 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
-
-
-def buy_tenth(buy_clicks=0):
-    """The Module Has Been Built to buy # HELL PORTAL (10)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 540 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
-
-
-def buy_eleventh(buy_clicks=0):
-    """The Module Has Been Built to buy # HALL OF LEGENDS (11)."""
-    pyautogui.click(X_CORDINATE,
-                    Y_CORDINATE + 600 + ADJUSTMENTS,
-                    clicks=buy_clicks,
-                    interval=BUTTON_SPEED,
-                    button='left'
-                    )
+def buybuildingsrev(clicks):
+    """The Module buy all buildings but Reversed (Hall of Legends to Farms)."""
+    total_clicks = 0
+    clicks += 0
+    # for i in Y_CORDINATE[::-1]:
+    for i in reversed(Y_CORDINATE):
+        click(X_CORDINATE[0], i + ADJUSTMENTS, clicks, CLICK_SPEED)
+    total_clicks = clicks * len(Y_CORDINATE)
+    # print("buybuildingsrev: {}".format(clicks))
+    return total_clicks

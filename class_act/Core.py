@@ -3,6 +3,11 @@
 # =============================================================================
 """This Module Has Been Build for the Steam Game 'Realm Grinder'."""
 # =============================================================================
+# Laptop Screen Size Directly Correlates to the x, y axis of mouse navigation.
+# Note: Currently SPECIFICALLY ONLY WORKS WITH VERSION "PyAutoGUI 0.9.44 !!!"
+# TO INSTALL USE:    pip3 install 'pyautogui==0.9.44' --force --upgrade
+# =============================================================================
+
 from sys import argv
 
 from factions import angels
@@ -18,42 +23,48 @@ from factions import titan
 from factions import undead
 
 if len(argv) == 1:
-    exit("Must Specify A Faction (Fairies, Elven, Angels, "
+    exit("Must Specify A Faction (Fairy, Elven, Angel, "
          "Goblin, Undead, Demon, "
          "Titan, Druid, Faceless, "
-         "Mercenary or clickinupgrades)")
+         "Mercenary (or mercs) or clickinupgrades)")
 
 if len(argv) == 2:
-    # print(argv[1])
-    # print(type(argv[1]))
-    if argv[1].__str__().lower() == "fairies":
+    # Good Factions
+    if argv[1].__str__().lower().strip() == "fairy":
         fairies()
-    elif argv[1].__str__().lower() == "elven":
+    elif argv[1].__str__().lower().strip() == "elven":
         elven()
-    elif argv[1].__str__().lower() == "angels":
+    elif argv[1].__str__().lower().strip() == "angel":
         angels()
 
-    elif argv[1].__str__().lower() == "goblin":
+    # Evil Factions
+    elif argv[1].__str__().lower().strip() == "goblin":
         goblin()
-    elif argv[1].__str__().lower() == "undead":
+    elif argv[1].__str__().lower().strip() == "undead":
         undead()
-    elif argv[1].__str__().lower() == "demon":
+    elif argv[1].__str__().lower().strip() == "demon":
         demon()
 
-    elif argv[1].__str__().lower() == "titan":
+    # Neutral Factions
+    elif argv[1].__str__().lower().strip() == "titan":
         titan()
-    elif argv[1].__str__().lower() == "druid":
+    elif argv[1].__str__().lower().strip() == "druid":
         druid()
-    elif argv[1].__str__().lower() == "faceless":
+    elif argv[1].__str__().lower().strip() == "faceless":
         faceless()
 
-    elif argv[1].__str__().lower() == "mercenary":
+    elif argv[1].__str__().lower().strip() == "mercenary":
+        mercenary()
+    elif argv[1].__str__().lower().strip() == "mercs":
+        mercenary()
+    elif argv[1].__str__().lower().strip() == "merc":
         mercenary()
 
-    elif argv[1].__str__().lower() == "clickinupgrades":
+    elif argv[1].__str__().lower().strip() == "clickinupgrades":
         clickinupgrades()
     else:
-        print("Unknown Faction: {}.".format(argv[1].__str__()))
+        exit("Unknown Faction: {}.".format(argv[1].__str__()))
+
 
 elif len(argv) > 2:
     exit('Unknown Extra Arguments: {}'.format(argv[2:].__str__()))

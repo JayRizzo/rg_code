@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
-"""This Module Has Been Build for the Steam Game 'Realm Grinder'."""
+"""The Module buyallupgradesbutton is Built for the Steam Game 'Realm Grinder'.
+
+Buy all available upgrades.
+"""
 # =============================================================================
 from pyautogui import click
 CLICK_SPEED = 0.0037

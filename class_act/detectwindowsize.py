@@ -36,7 +36,8 @@ class DetectWindowSize():
     def main(self):
         """SET WindowSize variables."""
         if str(size()) == 'Size(width=1440, height=900)':
-            # Laptop Screen.
+            # Built-in Display 15.4-inch (2880 x 1800)
+            # Intel Iris Pro 1536 MB graphics
             self.x_cordinate = int(600)
             self.y_cordinate = int(580)
             self.adjustments = int(0)
@@ -44,6 +45,7 @@ class DetectWindowSize():
             return
         elif str(size()) == 'Size(width=1920, height=1080)':
             # TV Screen Using Thunderbolt to HDMI.
+            # E70-E3 Display 69-inch (1920 x 1080)
             self.x_cordinate = int(560)
             self.y_cordinate = int(430)
             self.adjustments = int(60)

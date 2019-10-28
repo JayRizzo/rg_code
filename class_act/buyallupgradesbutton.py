@@ -14,8 +14,10 @@ CLICK_SPEED = 0.0037
 def buyallupgradesbutton(clicks):
     """The buyallupgradesbutton is to buy all available upgrades."""
     click(298, 106, clicks=clicks, interval=CLICK_SPEED, button="left")
+    return clicks
 
 
 def buyallupgradesbuttonmercenary(clicks):
     """The buyallupgradesbuttonmercenary is to buy all available upgrades."""
     click(160, 106, clicks=clicks, interval=0.0037, button="left")
+    return clicks

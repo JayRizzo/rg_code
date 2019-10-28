@@ -74,7 +74,7 @@ def fairies(clicks=None):
         total_time_elapsed += (_end - _start).total_seconds()
         timerz(_, _start, _end,
                moneyclicks=clicks,
-               total_clicks_purchased=total_clicks,
+               total_clicks=total_clicks,
                clicksbuilding=BUILDINGS,
                total_buildings_purchased=total_buildings_purchased,
                upgrades=UPGRADES,
@@ -106,7 +106,7 @@ def elven(clicks=None):
         total_time_elapsed += (_end - _start).total_seconds()
         timerz(_, _start, _end,
                moneyclicks=clicks,
-               total_clicks_purchased=total_clicks,
+               total_clicks=total_clicks,
                clicksbuilding=BUILDINGS,
                total_buildings_purchased=total_buildings_purchased,
                upgrades=UPGRADES,
@@ -137,7 +137,7 @@ def angels(clicks=None):
         total_time_elapsed += (_end - _start).total_seconds()
         timerz(_, _start, _end,
                moneyclicks=clicks,
-               total_clicks_purchased=total_clicks,
+               total_clicks=total_clicks,
                clicksbuilding=BUILDINGS,
                total_buildings_purchased=total_buildings_purchased,
                upgrades=UPGRADES,
@@ -169,7 +169,7 @@ def goblin(clicks=None):
         total_time_elapsed += (_end - _start).total_seconds()
         timerz(_, _start, _end,
                moneyclicks=clicks,
-               total_clicks_purchased=total_clicks,
+               total_clicks=total_clicks,
                clicksbuilding=BUILDINGS,
                total_buildings_purchased=total_buildings_purchased,
                upgrades=UPGRADES,
@@ -201,7 +201,7 @@ def undead(clicks=None):
         total_time_elapsed += (_end - _start).total_seconds()
         timerz(_, _start, _end,
                moneyclicks=clicks,
-               total_clicks_purchased=total_clicks,
+               total_clicks=total_clicks,
                clicksbuilding=BUILDINGS,
                total_buildings_purchased=total_buildings_purchased,
                upgrades=UPGRADES,
@@ -233,7 +233,7 @@ def demon(clicks=None):
         total_time_elapsed += (_end - _start).total_seconds()
         timerz(_, _start, _end,
                moneyclicks=clicks,
-               total_clicks_purchased=total_clicks,
+               total_clicks=total_clicks,
                clicksbuilding=BUILDINGS,
                total_buildings_purchased=total_buildings_purchased,
                upgrades=UPGRADES,
@@ -265,7 +265,7 @@ def titan(clicks=None):
         total_time_elapsed += (_end - _start).total_seconds()
         timerz(_, _start, _end,
                moneyclicks=clicks,
-               total_clicks_purchased=total_clicks,
+               total_clicks=total_clicks,
                clicksbuilding=BUILDINGS,
                total_buildings_purchased=total_buildings_purchased,
                upgrades=UPGRADES,
@@ -297,7 +297,7 @@ def druid(clicks=None):
         total_time_elapsed += (_end - _start).total_seconds()
         timerz(_, _start, _end,
                moneyclicks=clicks,
-               total_clicks_purchased=total_clicks,
+               total_clicks=total_clicks,
                clicksbuilding=BUILDINGS,
                total_buildings_purchased=total_buildings_purchased,
                upgrades=UPGRADES,
@@ -329,7 +329,7 @@ def faceless(clicks=None):
         total_time_elapsed += (_end - _start).total_seconds()
         timerz(_, _start, _end,
                moneyclicks=clicks,
-               total_clicks_purchased=total_clicks,
+               total_clicks=total_clicks,
                clicksbuilding=BUILDINGS,
                total_buildings_purchased=total_buildings_purchased,
                upgrades=UPGRADES,
@@ -361,7 +361,7 @@ def mercenary(clicks=None):
         total_time_elapsed += (_end - _start).total_seconds()
         timerz(_, _start, _end,
                moneyclicks=clicks,
-               total_clicks_purchased=total_clicks,
+               total_clicks=total_clicks,
                clicksbuilding=BUILDINGS,
                total_buildings_purchased=total_buildings_purchased,
                upgrades=UPGRADES,
@@ -397,8 +397,8 @@ def clickinupgrades(clicks=None, merx=False):
               " Round: {_round:05d}"
               " Clicks: {_clicks:05d}"
               " Total Clicks: {_tclicks:07d}."
-              " TimeElapsed: {_seconds:.3f} sec"
-              " TTimeElapsed: {_tseconds:.3f} sec"
+              " TimeElapsed: {_seconds:07.3f} sec"
+              " TTimeElapsed: {_tseconds:09.3f} sec"
               "".format(_time=(_now()),
                         _round=(_ + 1),
                         _clicks=clicks,

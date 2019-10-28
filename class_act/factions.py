@@ -19,246 +19,401 @@ from clickmove import clickmove
 from clickmove import strightclickin
 
 SLEEPTIME = 10
-CLICK_SPEED = 0.0315  # REALM GRINDER DESKTOP CAN'T REGISTAR QUICKER THAN THIS.
+CLICK_SPEED = 0.037  # REALM GRINDER DESKTOP CANNOT REGISTAR QUICKER THAN THIS!
+MONEYCLICKS = 25
+UPGRADES = 1
+BUILDINGS = 10  # Module buys 10 in less than 1 sec each
 
 
 def _now():
     """The Module Reports A Formatted Time."""
-    ymd = (strftime('%Y%m%d_%H%M%S'))
+    ymd = (strftime("%Y%m%d_%H%M%S"))
     return ymd
 
 
-def timerz(roundnum, start, end, clicks):
+def timerz(roundnum, _start, _end,
+           moneyclicks=0, total_clicks=0,
+           clicksbuilding=0, total_buildings_purchased=0,
+           upgrades=0, total_upgrades_purchased=0,
+           total_time_elapsed=0, last_total_time_elapsed=0):
     """The Module Reports A Formatted Timer."""
-    a = ("{}: TimeElapsed: {} Seconds, Clicks: {} x {} "
-         "= {} clicks.".format(_now(),
-                               "{:.5f}".format((end -
-                                                start).total_seconds()),
-                               clicks, roundnum + 1, ((roundnum + 1) * clicks),
-                               )
-         )
-    print("{}".format(a))
-    return a
+    print("{} Round {} TT: {} T: {} TD: {} TB: {} B: {} U: {} C: {} TC: {}."
+          "".format(_now(),
+                    "{:04.0f}".format(roundnum + 1),
+                    "{:07.3f}".format(total_time_elapsed),
+                    "{:07.3f}".format((_end - _start).total_seconds()),
+                    "{:07.3f}".format((_end - _start).total_seconds() -
+                                      last_total_time_elapsed),
+                    "{:04.0f}".format(total_buildings_purchased),
+                    "{:04.0f}".format(clicksbuilding),
+                    "{:04.0f}".format(total_upgrades_purchased),
+                    "{:04.0f}".format(moneyclicks),
+                    "{:04.0f}".format(total_clicks)
+                    )
+          )
+    last_total_time_elapsed = (_end - _start).total_seconds()
 
 
-def basic_run(moneyclicks,
-              clicksbuilding,
-              upgrades,
-              mercz=False):
-    """The Speeds Up New Game Gem Grinding."""
+def fairies(clicks=None):
+    """The Module Has Been Built for the Fairy Race."""
     total_upgrades_purchased = 0
     total_buildings_purchased = 0
-    total_clicks_purchased = 0
+    clicks = MONEYCLICKS + 0
     last_total_time_elapsed = 0
+    total_clicks = 0
     total_time_elapsed = 0
-    upgrades = upgrades + 0
-    moneyclicks = moneyclicks + 0
-    clicksbuilding = clicksbuilding + 0
-    for _ in range(9999999999):
+    for _ in range(99999999999999999):
         _start = datetime.now()
-        total_upgrades_purchased += upgrades * 2
-        total_buildings_purchased += (clicksbuilding * 22) + (22 * 4)
-        total_clicks_purchased += moneyclicks
-        if mercz:
-            baum(upgrades)
-        else:
-            bau(upgrades)
-        brb(clicksbuilding)
-        brb(clicksbuilding)
-        babre(clicksbuilding)
-        brb(clicksbuilding)
-        brb(clicksbuilding)
-        strightclickin(moneyclicks)
+        total_upgrades_purchased += bau(UPGRADES)
+        total_buildings_purchased += bab(BUILDINGS)
+        for _pony in range(10):
+            total_buildings_purchased += brb(BUILDINGS)
+        total_upgrades_purchased += bau(UPGRADES)
+        total_clicks += clickmove(clicks, CLICK_SPEED)
         _end = datetime.now()
         total_time_elapsed += (_end - _start).total_seconds()
-        print("{} Round {} TT: {} T: {} TD: {} B: {} U: {} C: {} TC: {}."
-              "".format(_now(),
-                        "{:04.0f}".format(_ + 1),
-                        "{:07.3f}".format(total_time_elapsed),
-                        "{:07.3f}".format((_end - _start).total_seconds()),
-                        "{:07.3f}".format((_end - _start).total_seconds() -
-                                          last_total_time_elapsed),
-                        "{:04.0f}".format(total_buildings_purchased),
-                        "{:04.0f}".format(total_upgrades_purchased),
-                        "{:04.0f}".format(moneyclicks),
-                        "{:04.0f}".format(total_clicks_purchased)
-                        )
-              )
+        timerz(_, _start, _end,
+               moneyclicks=clicks,
+               total_clicks_purchased=total_clicks,
+               clicksbuilding=BUILDINGS,
+               total_buildings_purchased=total_buildings_purchased,
+               upgrades=UPGRADES,
+               total_upgrades_purchased=total_upgrades_purchased,
+               total_time_elapsed=total_time_elapsed,
+               last_total_time_elapsed=last_total_time_elapsed
+               )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        moneyclicks += 250
+        clicks += 25
 
 
-def fairies():
-    """The Module Has Been Built for the Fairy Race."""
-    clicks = 250
-    print("{}: Starting Clicks Per Round {}.".format(_now(), clicks))
-    for _ in range(99999999999999999):
-        start = datetime.now()
-        bau(1)
-        brb(10)
-        bab(10)
-        babre(10)
-        for _pony in range(10):
-            brb(10)
-        clickmove(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
-
-
-def elven():
+def elven(clicks=None):
     """The Module Has Been Built for the Elven Race."""
-    clicks = 250
-    print("{}: Starting Clicks Per Round {}.".format(_now(), clicks))
+    total_upgrades_purchased = 0
+    total_buildings_purchased = 0
+    clicks = MONEYCLICKS + 0
+    last_total_time_elapsed = 0
+    total_clicks = 0
+    total_time_elapsed = 0
     for _ in range(99999999999999999):
-        start = datetime.now()
-        bau(1)
-        brb(10)
-        brb(10)
-        babre(10)
+        _start = datetime.now()
+        total_upgrades_purchased += bau(UPGRADES)
+        total_buildings_purchased += babre(BUILDINGS)
         for _pony in range(10):
-            brb(10)
-        clickmove(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
+            total_buildings_purchased += brb(BUILDINGS)
+        total_upgrades_purchased += bau(UPGRADES)
+        total_clicks += clickmove(clicks, CLICK_SPEED)
+        _end = datetime.now()
+        total_time_elapsed += (_end - _start).total_seconds()
+        timerz(_, _start, _end,
+               moneyclicks=clicks,
+               total_clicks_purchased=total_clicks,
+               clicksbuilding=BUILDINGS,
+               total_buildings_purchased=total_buildings_purchased,
+               upgrades=UPGRADES,
+               total_upgrades_purchased=total_upgrades_purchased,
+               total_time_elapsed=total_time_elapsed,
+               last_total_time_elapsed=last_total_time_elapsed
+               )
+        last_total_time_elapsed = (_end - _start).total_seconds()
+        clicks += 25
 
 
 def angels(clicks=None):
     """The Module Has Been Built for the Angels Race."""
-    clicks = 250
-    print("{}: Starting Clicks Per Round {}.".format(_now(), clicks))
+    total_upgrades_purchased = 0
+    total_buildings_purchased = 0
+    clicks = MONEYCLICKS + 0
+    last_total_time_elapsed = 0
+    total_clicks = 0
+    total_time_elapsed = 0
     for _ in range(99999999999999999):
-        start = datetime.now()
-        bau(1)
+        _start = datetime.now()
+        total_upgrades_purchased += bau(UPGRADES)
         for _pony in range(10):
-            brb(10)
-        clickmove(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
+            total_buildings_purchased += brb(BUILDINGS)
+        total_upgrades_purchased += bau(UPGRADES)
+        total_clicks += clickmove(clicks, CLICK_SPEED)
+        _end = datetime.now()
+        total_time_elapsed += (_end - _start).total_seconds()
+        timerz(_, _start, _end,
+               moneyclicks=clicks,
+               total_clicks_purchased=total_clicks,
+               clicksbuilding=BUILDINGS,
+               total_buildings_purchased=total_buildings_purchased,
+               upgrades=UPGRADES,
+               total_upgrades_purchased=total_upgrades_purchased,
+               total_time_elapsed=total_time_elapsed,
+               last_total_time_elapsed=last_total_time_elapsed
+               )
+        last_total_time_elapsed = (_end - _start).total_seconds()
+        clicks += 25
 
 
 def goblin(clicks=None):
     """The Module Has Been Built for the Goblin Race."""
-    clicks = 250
-    print("{}: Starting Clicks Per Round {}.".format(_now(), clicks))
+    total_upgrades_purchased = 0
+    total_buildings_purchased = 0
+    clicks = MONEYCLICKS + 0
+    last_total_time_elapsed = 0
+    total_clicks = 0
+    total_time_elapsed = 0
     for _ in range(99999999999999999):
-        start = datetime.now()
-        bau(1)
-        for _pony in range(2):
-            brb(10)
-        strightclickin(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
+        _start = datetime.now()
+        total_upgrades_purchased += bau(UPGRADES)
+        total_buildings_purchased += babre(BUILDINGS)
+        for _pony in range(10):
+            total_buildings_purchased += brb(BUILDINGS)
+        total_upgrades_purchased += bau(UPGRADES)
+        total_clicks += strightclickin(clicks, CLICK_SPEED)
+        _end = datetime.now()
+        total_time_elapsed += (_end - _start).total_seconds()
+        timerz(_, _start, _end,
+               moneyclicks=clicks,
+               total_clicks_purchased=total_clicks,
+               clicksbuilding=BUILDINGS,
+               total_buildings_purchased=total_buildings_purchased,
+               upgrades=UPGRADES,
+               total_upgrades_purchased=total_upgrades_purchased,
+               total_time_elapsed=total_time_elapsed,
+               last_total_time_elapsed=last_total_time_elapsed
+               )
+        last_total_time_elapsed = (_end - _start).total_seconds()
+        clicks += 25
 
 
 def undead(clicks=None):
     """The Module Has Been Built for the Undead Race."""
-    clicks = 250
-    print("{}: Starting Clicks Per Round {}.".format(_now(), clicks))
+    total_upgrades_purchased = 0
+    total_buildings_purchased = 0
+    clicks = MONEYCLICKS + 0
+    last_total_time_elapsed = 0
+    total_clicks = 0
+    total_time_elapsed = 0
     for _ in range(99999999999999999):
-        start = datetime.now()
-        bau(1)
-        babre(10)
-        for _pony in range(2):
-            brb(10)
-        strightclickin(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
+        _start = datetime.now()
+        total_upgrades_purchased += bau(UPGRADES)
+        total_buildings_purchased += babre(BUILDINGS)
+        for _pony in range(10):
+            total_buildings_purchased += brb(BUILDINGS)
+        total_upgrades_purchased += bau(UPGRADES)
+        total_clicks += strightclickin(clicks, CLICK_SPEED)
+        _end = datetime.now()
+        total_time_elapsed += (_end - _start).total_seconds()
+        timerz(_, _start, _end,
+               moneyclicks=clicks,
+               total_clicks_purchased=total_clicks,
+               clicksbuilding=BUILDINGS,
+               total_buildings_purchased=total_buildings_purchased,
+               upgrades=UPGRADES,
+               total_upgrades_purchased=total_upgrades_purchased,
+               total_time_elapsed=total_time_elapsed,
+               last_total_time_elapsed=last_total_time_elapsed
+               )
+        last_total_time_elapsed = (_end - _start).total_seconds()
+        clicks += 25
 
 
 def demon(clicks=None):
     """The Module Has Been Built for the Demon Race."""
-    clicks = 250
-    print("{}: Starting Clicks Per Round {}.".format(_now(), clicks))
+    total_upgrades_purchased = 0
+    total_buildings_purchased = 0
+    clicks = MONEYCLICKS + 0
+    last_total_time_elapsed = 0
+    total_clicks = 0
+    total_time_elapsed = 0
     for _ in range(99999999999999999):
-        start = datetime.now()
-        bau(1)
-        babre(10)
+        _start = datetime.now()
+        total_upgrades_purchased += bau(UPGRADES)
+        total_buildings_purchased += babre(BUILDINGS)
         for _pony in range(10):
-            brb(10)
-        strightclickin(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
+            total_buildings_purchased += brb(BUILDINGS)
+        total_upgrades_purchased += bau(UPGRADES)
+        total_clicks += strightclickin(clicks, CLICK_SPEED)
+        _end = datetime.now()
+        total_time_elapsed += (_end - _start).total_seconds()
+        timerz(_, _start, _end,
+               moneyclicks=clicks,
+               total_clicks_purchased=total_clicks,
+               clicksbuilding=BUILDINGS,
+               total_buildings_purchased=total_buildings_purchased,
+               upgrades=UPGRADES,
+               total_upgrades_purchased=total_upgrades_purchased,
+               total_time_elapsed=total_time_elapsed,
+               last_total_time_elapsed=last_total_time_elapsed
+               )
+        last_total_time_elapsed = (_end - _start).total_seconds()
+        clicks += 25
 
 
 def titan(clicks=None):
     """The Module Has Been Built for the Titan Race."""
-    clicks = 250
-    print("{}: Starting Clicks Per Round {}.".format(_now(), clicks))
+    total_upgrades_purchased = 0
+    total_buildings_purchased = 0
+    clicks = MONEYCLICKS + 0
+    last_total_time_elapsed = 0
+    total_clicks = 0
+    total_time_elapsed = 0
     for _ in range(99999999999999999):
-        start = datetime.now()
-        bau(1)
-        babre(10)
+        _start = datetime.now()
+        total_upgrades_purchased += bau(UPGRADES)
+        total_buildings_purchased += babre(BUILDINGS)
         for _pony in range(10):
-            brb(10)
-        strightclickin(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
+            total_buildings_purchased += brb(BUILDINGS)
+        total_upgrades_purchased += bau(UPGRADES)
+        total_clicks += strightclickin(clicks, CLICK_SPEED)
+        _end = datetime.now()
+        total_time_elapsed += (_end - _start).total_seconds()
+        timerz(_, _start, _end,
+               moneyclicks=clicks,
+               total_clicks_purchased=total_clicks,
+               clicksbuilding=BUILDINGS,
+               total_buildings_purchased=total_buildings_purchased,
+               upgrades=UPGRADES,
+               total_upgrades_purchased=total_upgrades_purchased,
+               total_time_elapsed=total_time_elapsed,
+               last_total_time_elapsed=last_total_time_elapsed
+               )
+        last_total_time_elapsed = (_end - _start).total_seconds()
+        clicks += 25
 
 
 def druid(clicks=None):
     """The Module Has Been Built for the Druid Race."""
-    clicks = 250
-    print("{}: Starting Clicks Per Round {}.".format(_now(), clicks))
+    total_upgrades_purchased = 0
+    total_buildings_purchased = 0
+    clicks = MONEYCLICKS + 0
+    last_total_time_elapsed = 0
+    total_clicks = 0
+    total_time_elapsed = 0
     for _ in range(99999999999999999):
-        start = datetime.now()
-        bau(1)
-        babre(10)
+        _start = datetime.now()
+        total_upgrades_purchased += bau(UPGRADES)
+        total_buildings_purchased += babre(BUILDINGS)
         for _pony in range(10):
-            brb(10)
-        strightclickin(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
+            total_buildings_purchased += brb(BUILDINGS)
+        total_upgrades_purchased += bau(UPGRADES)
+        total_clicks += strightclickin(clicks, CLICK_SPEED)
+        _end = datetime.now()
+        total_time_elapsed += (_end - _start).total_seconds()
+        timerz(_, _start, _end,
+               moneyclicks=clicks,
+               total_clicks_purchased=total_clicks,
+               clicksbuilding=BUILDINGS,
+               total_buildings_purchased=total_buildings_purchased,
+               upgrades=UPGRADES,
+               total_upgrades_purchased=total_upgrades_purchased,
+               total_time_elapsed=total_time_elapsed,
+               last_total_time_elapsed=last_total_time_elapsed
+               )
+        last_total_time_elapsed = (_end - _start).total_seconds()
+        clicks += 50
 
 
 def faceless(clicks=None):
     """The Module Has Been Built for the Faceless Race."""
-    clicks = 250
-    print("{}: Starting Clicks Per Round {}.".format(_now(), clicks))
+    total_upgrades_purchased = 0
+    total_buildings_purchased = 0
+    clicks = MONEYCLICKS + 0
+    last_total_time_elapsed = 0
+    total_clicks = 0
+    total_time_elapsed = 0
     for _ in range(99999999999999999):
-        start = datetime.now()
-        bau(1)
-        babre(10)
-        for _pony in range(5):
-            brb(10)
-        strightclickin(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
-        clicks += 25
+        _start = datetime.now()
+        total_upgrades_purchased += bau(UPGRADES)
+        total_buildings_purchased += babre(BUILDINGS)
+        for _pony in range(10):
+            total_buildings_purchased += brb(BUILDINGS)
+        total_upgrades_purchased += bau(UPGRADES)
+        total_clicks += strightclickin(clicks, CLICK_SPEED)
+        _end = datetime.now()
+        total_time_elapsed += (_end - _start).total_seconds()
+        timerz(_, _start, _end,
+               moneyclicks=clicks,
+               total_clicks_purchased=total_clicks,
+               clicksbuilding=BUILDINGS,
+               total_buildings_purchased=total_buildings_purchased,
+               upgrades=UPGRADES,
+               total_upgrades_purchased=total_upgrades_purchased,
+               total_time_elapsed=total_time_elapsed,
+               last_total_time_elapsed=last_total_time_elapsed
+               )
+        last_total_time_elapsed = (_end - _start).total_seconds()
+        clicks += 250
 
 
 def mercenary(clicks=None):
     """The Module Has Been Built for the Mercenary Race."""
-    clicks = 250
+    total_upgrades_purchased = 0
+    total_buildings_purchased = 0
+    clicks = MONEYCLICKS + 0
+    last_total_time_elapsed = 0
+    total_clicks = 0
+    total_time_elapsed = 0
     for _ in range(99999999999999999):
-        start = datetime.now()
-        baum(1)
-        babre(10)
+        _start = datetime.now()
+        total_upgrades_purchased += baum(UPGRADES)
+        total_buildings_purchased += babre(BUILDINGS)
         for _pony in range(10):
-            brb(10)
-        strightclickin(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
+            total_buildings_purchased += brb(BUILDINGS)
+        total_upgrades_purchased += baum(UPGRADES)
+        total_clicks += strightclickin(clicks, CLICK_SPEED)
+        _end = datetime.now()
+        total_time_elapsed += (_end - _start).total_seconds()
+        timerz(_, _start, _end,
+               moneyclicks=clicks,
+               total_clicks_purchased=total_clicks,
+               clicksbuilding=BUILDINGS,
+               total_buildings_purchased=total_buildings_purchased,
+               upgrades=UPGRADES,
+               total_upgrades_purchased=total_upgrades_purchased,
+               total_time_elapsed=total_time_elapsed,
+               last_total_time_elapsed=last_total_time_elapsed
+               )
+        last_total_time_elapsed = (_end - _start).total_seconds()
+        clicks += 250
 
 
-def clickinupgrades():
-    """The Module Has Been Built for All Races.
+def clickinupgrades(clicks=None, merx=False):
+    """The Module Has Been Built for All races.
 
     The Design is for upgrades and clickin only.
     """
-    clicks = 250
+    clicks = MONEYCLICKS  # pass constant into variable.
     print("{}: Starting Clicks Per Round {}.".format(_now(), clicks))
+    total_clicks = 0
+    total_time_elapsed = 0
+    time_elapsed = 0
     for _ in range(99999999999999999):
-        start = datetime.now()
-        bau(1)
-        clickmove(clicks)
-        end = datetime.now()
-        timerz(_, start, end, clicks)
+        _start = datetime.now()
+        if merx:
+            baum(UPGRADES)
+        else:
+            bau(UPGRADES)
+        total_clicks += strightclickin(clicks, CLICK_SPEED)
+        _end = datetime.now()
+        time_elapsed = (_end - _start).total_seconds()
+        total_time_elapsed += (total_time_elapsed + time_elapsed)
+        print("{_time}:"
+              " Round: {_round:05d}"
+              " Clicks: {_clicks:05d}"
+              " Total Clicks: {_tclicks:07d}."
+              " TimeElapsed: {_seconds:.3f} sec"
+              " TTimeElapsed: {_tseconds:.3f} sec"
+              "".format(_time=(_now()),
+                        _round=(_ + 1),
+                        _clicks=clicks,
+                        _tclicks=total_clicks,
+                        _seconds=time_elapsed,
+                        _tseconds=total_time_elapsed,
+                        )
+              )
+        clicks += 25
 
 
 if __name__ == "__main__":
-    if os.name == 'posix' and platform.system() == 'Darwin':
+    if os.name == "posix" and platform.system() == "Darwin":
         # print("{}".format(platform.system()))
         pass
     else:
-        exit('Supported by OSX only at this time.')
+        exit("Supported by OSX only at this time.")
         print("{}".format(platform.system()))

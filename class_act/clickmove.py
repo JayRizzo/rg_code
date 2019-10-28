@@ -15,8 +15,9 @@ from pyautogui import click
 from pyautogui import easeInOutQuad
 
 
-def strightclickin(count_me=50, click_speed=0.037):
+def strightclickin(count_me, click_speed=0.037):
     """Docs."""
+    count_me += 0
     dws = DetectWindowSize()
     DetectWindowSize.main(dws)
     x_cordinate = dws.x_cordinate
@@ -26,9 +27,6 @@ def strightclickin(count_me=50, click_speed=0.037):
           clicks=count_me,
           interval=click_speed,
           button='left'
-          # ,
-          # tween=easeInOutQuad,
-          # duration=0.01
           )
     return count_me
 
@@ -38,6 +36,8 @@ def clickmove(count_me=50, click_speed=0.037):
 
     This func is required to keep making the most money while clicking.
     you must move every 25-50 clicks otherwise you loose the %600 bonus.
+
+    Required only for R2-R50?  Goes away after some point.
     """
     dws = DetectWindowSize()
     DetectWindowSize.main(dws)
@@ -67,5 +67,5 @@ def clickmove(count_me=50, click_speed=0.037):
 
 if __name__ == "__main__":
     print("{} has been called from {}".format(__file__, __name__))
-    strightclickin(count_me=10)
+    strightclickin(count_me=250)
     clickmove(count_me=250)

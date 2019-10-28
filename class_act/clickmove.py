@@ -14,25 +14,26 @@ from detectwindowsize import DetectWindowSize
 from pyautogui import click
 from pyautogui import easeInOutQuad
 
-CLICK_SPEED = 0.037
 
-
-def strightclickin(count_me=50):
+def strightclickin(count_me=50, click_speed=0.037):
     """Docs."""
     dws = DetectWindowSize()
     DetectWindowSize.main(dws)
-    x_cordinate = int((dws.x_cordinate))
-    y_cordinate = int((dws.y_cordinate))
-    click(int((x_cordinate)) + 0,
-          int((y_cordinate)) + 0,
+    x_cordinate = dws.x_cordinate
+    y_cordinate = dws.y_cordinate
+    click(x_cordinate,
+          y_cordinate,
           clicks=count_me,
-          interval=CLICK_SPEED,
-          button='left',
-          tween=easeInOutQuad
+          interval=click_speed,
+          button='left'
+          # ,
+          # tween=easeInOutQuad,
+          # duration=0.01
           )
+    return count_me
 
 
-def clickmove(count_me=50):
+def clickmove(count_me=50, click_speed=0.037):
     """"The clickmove is a Module is for Good Players using Dwarven.
 
     This func is required to keep making the most money while clicking.
@@ -40,8 +41,10 @@ def clickmove(count_me=50):
     """
     dws = DetectWindowSize()
     DetectWindowSize.main(dws)
-    x_cordinate = int((dws.x_cordinate))
-    y_cordinate = int((dws.y_cordinate))
+    x_cordinate = dws.x_cordinate
+    y_cordinate = dws.y_cordinate
+    adjustments = dws.adjustments
+
     count = 1
     count_upto_me = count_me
     _start_number = 0
@@ -49,16 +52,17 @@ def clickmove(count_me=50):
     total_clicks_left = int(count_upto_me)
 
     for count in range(_start_number, count_upto_me, _interval):
-        click(int((x_cordinate)) + (random.randint(-25, 25)),
-              int((y_cordinate)) + (random.randint(-25, 25)),
+        click(x_cordinate + (random.randint(-25, 25)) + adjustments,
+              y_cordinate + (random.randint(-25, 25)) + adjustments,
               clicks=_interval,
-              interval=CLICK_SPEED,
+              interval=click_speed,
               button='left',
               tween=easeInOutQuad
               )
 
         count += _interval
         total_clicks_left -= _interval
+    return count_me
 
 
 if __name__ == "__main__":

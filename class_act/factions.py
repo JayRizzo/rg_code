@@ -338,7 +338,7 @@ def faceless(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 250
+        clicks += 25
 
 
 def mercenary(clicks=None):
@@ -370,7 +370,7 @@ def mercenary(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 250
+        clicks += 25
 
 
 def clickinupgrades(clicks=None, merx=False):

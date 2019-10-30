@@ -18,7 +18,7 @@ from factions import demon
 from factions import druid
 from factions import elven
 from factions import faceless
-from factions import fairies
+from factions import fairy
 from factions import goblin
 from factions import mercenary
 from factions import titan
@@ -46,7 +46,7 @@ if __name__ == "__main__":
         if len(argv) == 2:
             # Good Factions
             if argv[1].__str__().lower().strip() == "fairy":
-                fairies()
+                fairy()
             elif argv[1].__str__().lower().strip() == "elven":
                 elven()
             elif argv[1].__str__().lower().strip() == "angel":

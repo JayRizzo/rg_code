@@ -54,7 +54,7 @@ def timerz(roundnum, _start, _end,
     last_total_time_elapsed = (_end - _start).total_seconds()
 
 
-def fairies(clicks=None):
+def fairy(clicks=None):
     """The Module Has Been Built for the Fairy Race."""
     total_upgrades_purchased = 0
     total_buildings_purchased = 0
@@ -65,6 +65,7 @@ def fairies(clicks=None):
     for _ in range(99999999999999999):
         _start = datetime.now()
         total_upgrades_purchased += bau(UPGRADES)
+        # total_buildings_purchased += Y_CORDINATE[0]  # buy Farms
         total_buildings_purchased += bab(BUILDINGS)
         for _pony in range(10):
             total_buildings_purchased += brb(BUILDINGS)

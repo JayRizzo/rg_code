@@ -15,6 +15,7 @@ from buybuildings import buybuildings as bab
 from buybuildings import buybuildingsrev as babre
 from buybuildings import buyrandombuildings as brb
 
+from call_count import CallCount
 from clickmove import clickmove
 from clickmove import strightclickin
 
@@ -25,13 +26,15 @@ UPGRADES = 1
 BUILDINGS = 10  # Module buys 10 in less than 1 sec each
 
 
+@CallCount
 def _now():
     """The Module Reports A Formatted Time."""
     ymd = (strftime("%Y%m%d_%H%M%S"))
     return ymd
 
 
-def timerz(roundnum, _start, _end,
+# @CallCount
+def timerz(roundnum=0, _start=_now(), _end=_now(),
            moneyclicks=0, total_clicks=0,
            clicksbuilding=0, total_buildings_purchased=0,
            upgrades=0, total_upgrades_purchased=0,
@@ -54,6 +57,7 @@ def timerz(roundnum, _start, _end,
     last_total_time_elapsed = (_end - _start).total_seconds()
 
 
+@CallCount
 def fairy(clicks=None):
     """The Module Has Been Built for the Fairy Race."""
     total_upgrades_purchased = 0
@@ -87,6 +91,7 @@ def fairy(clicks=None):
         clicks += 25
 
 
+@CallCount
 def elven(clicks=None):
     """The Module Has Been Built for the Elven Race."""
     total_upgrades_purchased = 0
@@ -119,6 +124,7 @@ def elven(clicks=None):
         clicks += 25
 
 
+@CallCount
 def angels(clicks=None):
     """The Module Has Been Built for the Angels Race."""
     total_upgrades_purchased = 0
@@ -150,6 +156,7 @@ def angels(clicks=None):
         clicks += 25
 
 
+@CallCount
 def goblin(clicks=None):
     """The Module Has Been Built for the Goblin Race."""
     total_upgrades_purchased = 0
@@ -182,6 +189,7 @@ def goblin(clicks=None):
         clicks += 25
 
 
+@CallCount
 def undead(clicks=None):
     """The Module Has Been Built for the Undead Race."""
     total_upgrades_purchased = 0
@@ -214,6 +222,7 @@ def undead(clicks=None):
         clicks += 25
 
 
+@CallCount
 def demon(clicks=None):
     """The Module Has Been Built for the Demon Race."""
     total_upgrades_purchased = 0
@@ -246,6 +255,7 @@ def demon(clicks=None):
         clicks += 25
 
 
+@CallCount
 def titan(clicks=None):
     """The Module Has Been Built for the Titan Race."""
     total_upgrades_purchased = 0
@@ -278,6 +288,7 @@ def titan(clicks=None):
         clicks += 25
 
 
+@CallCount
 def druid(clicks=None):
     """The Module Has Been Built for the Druid Race."""
     total_upgrades_purchased = 0
@@ -310,6 +321,7 @@ def druid(clicks=None):
         clicks += 50
 
 
+@CallCount
 def faceless(clicks=None):
     """The Module Has Been Built for the Faceless Race."""
     total_upgrades_purchased = 0
@@ -342,6 +354,7 @@ def faceless(clicks=None):
         clicks += 25
 
 
+@CallCount
 def mercenary(clicks=None):
     """The Module Has Been Built for the Mercenary Race."""
     total_upgrades_purchased = 0
@@ -374,6 +387,7 @@ def mercenary(clicks=None):
         clicks += 25
 
 
+@CallCount
 def clickinupgrades(clicks=None, merx=False):
     """The Module Has Been Built for All races.
 

@@ -13,7 +13,7 @@ from buyallupgradesbutton import buyallupgradesbuttonmercenary as baum
 
 from buybuildings import buybuildings as bab
 from buybuildings import buybuildingsrev as babre
-from buybuildings import buyrandombuildings as brb
+from buybuildings import buyrandombuildingslist as brb
 
 from call_count import CallCount
 from clickmove import clickmove
@@ -71,8 +71,7 @@ def fairy(clicks=None):
         total_upgrades_purchased += bau(UPGRADES)
         # total_buildings_purchased += Y_CORDINATE[0]  # buy Farms
         total_buildings_purchased += bab(BUILDINGS)
-        for _pony in range(10):
-            total_buildings_purchased += brb(BUILDINGS)
+        total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += bau(UPGRADES)
         total_clicks += clickmove(clicks, CLICK_SPEED)
         _end = datetime.now()
@@ -104,8 +103,7 @@ def elven(clicks=None):
         _start = datetime.now()
         total_upgrades_purchased += bau(UPGRADES)
         total_buildings_purchased += babre(BUILDINGS)
-        for _pony in range(10):
-            total_buildings_purchased += brb(BUILDINGS)
+        total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += bau(UPGRADES)
         total_clicks += clickmove(clicks, CLICK_SPEED)
         _end = datetime.now()
@@ -136,8 +134,7 @@ def angels(clicks=None):
     for _ in range(99999999999999999):
         _start = datetime.now()
         total_upgrades_purchased += bau(UPGRADES)
-        for _pony in range(10):
-            total_buildings_purchased += brb(BUILDINGS)
+        total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += bau(UPGRADES)
         total_clicks += clickmove(clicks, CLICK_SPEED)
         _end = datetime.now()
@@ -169,8 +166,7 @@ def goblin(clicks=None):
         _start = datetime.now()
         total_upgrades_purchased += bau(UPGRADES)
         total_buildings_purchased += babre(BUILDINGS)
-        for _pony in range(10):
-            total_buildings_purchased += brb(BUILDINGS)
+        total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += bau(UPGRADES)
         total_clicks += strightclickin(clicks, CLICK_SPEED)
         _end = datetime.now()
@@ -202,8 +198,7 @@ def undead(clicks=None):
         _start = datetime.now()
         total_upgrades_purchased += bau(UPGRADES)
         total_buildings_purchased += babre(BUILDINGS)
-        for _pony in range(10):
-            total_buildings_purchased += brb(BUILDINGS)
+        total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += bau(UPGRADES)
         total_clicks += strightclickin(clicks, CLICK_SPEED)
         _end = datetime.now()
@@ -235,8 +230,7 @@ def demon(clicks=None):
         _start = datetime.now()
         total_upgrades_purchased += bau(UPGRADES)
         total_buildings_purchased += babre(BUILDINGS)
-        for _pony in range(10):
-            total_buildings_purchased += brb(BUILDINGS)
+        total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += bau(UPGRADES)
         total_clicks += strightclickin(clicks, CLICK_SPEED)
         _end = datetime.now()
@@ -268,8 +262,7 @@ def titan(clicks=None):
         _start = datetime.now()
         total_upgrades_purchased += bau(UPGRADES)
         total_buildings_purchased += babre(BUILDINGS)
-        for _pony in range(10):
-            total_buildings_purchased += brb(BUILDINGS)
+        total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += bau(UPGRADES)
         total_clicks += strightclickin(clicks, CLICK_SPEED)
         _end = datetime.now()
@@ -301,8 +294,7 @@ def druid(clicks=None):
         _start = datetime.now()
         total_upgrades_purchased += bau(UPGRADES)
         total_buildings_purchased += babre(BUILDINGS)
-        for _pony in range(10):
-            total_buildings_purchased += brb(BUILDINGS)
+        total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += bau(UPGRADES)
         total_clicks += strightclickin(clicks, CLICK_SPEED)
         _end = datetime.now()
@@ -333,9 +325,8 @@ def faceless(clicks=None):
     for _ in range(99999999999999999):
         _start = datetime.now()
         total_upgrades_purchased += bau(UPGRADES)
+        total_buildings_purchased += brb(BUILDINGS)
         total_buildings_purchased += babre(BUILDINGS)
-        for _pony in range(10):
-            total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += bau(UPGRADES)
         total_clicks += strightclickin(clicks, CLICK_SPEED)
         _end = datetime.now()
@@ -367,8 +358,7 @@ def mercenary(clicks=None):
         _start = datetime.now()
         total_upgrades_purchased += baum(UPGRADES)
         total_buildings_purchased += babre(BUILDINGS)
-        for _pony in range(10):
-            total_buildings_purchased += brb(BUILDINGS)
+        total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += baum(UPGRADES)
         total_clicks += strightclickin(clicks, CLICK_SPEED)
         _end = datetime.now()

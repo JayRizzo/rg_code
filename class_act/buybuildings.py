@@ -6,7 +6,7 @@
 Buy all available Buildings.
 """
 # =============================================================================
-from random import choice
+from random import shuffle
 from random import uniform
 
 from detectwindowsize import DetectWindowSize
@@ -33,24 +33,6 @@ RANDOM_MOUSE = [easeInQuad,
                 ]
 
 
-# # @CallCount
-# def buy_allbauildings(buy_clicks=1):
-#     """Docs."""
-#     # print("%s Buying all available buildings." % (time.ctime()))
-#     Y_CORDINATE[0],
-#     Y_CORDINATE[1],
-#     Y_CORDINATE[2],
-#     Y_CORDINATE[3],
-#     Y_CORDINATE[4],
-#     Y_CORDINATE[5],
-#     Y_CORDINATE[6],
-#     Y_CORDINATE[7],
-#     Y_CORDINATE[8],
-#     Y_CORDINATE[9],
-#     Y_CORDINATE[10],
-#     return
-
-
 def human_variance():
     """The Module change the speed for each round of clicks you do.
 
@@ -60,29 +42,23 @@ def human_variance():
     return z
 
 
-def buyrandombuildings(clicks):
-    """The Module buy all buildings at random."""
-    clicks += 0
-    selectedz = choice(Y_CORDINATE) + ADJUSTMENTS
-    # moveTo(x=X_CORDINATE[0],
-    #        y=selectedz,
-    #        duration=round(uniform(25, 100) * .01, 2),
-    #        tween=choice(RANDOM_MOUSE)
-    #        )
-    click(x=X_CORDINATE[0],
-          y=selectedz,
-          clicks=clicks,
-          interval=CLICK_SPEED
-          # interval=human_variance()
-          )
-    return clicks
-
-
 def buybuildings(clicks):
     """Module To Buy All Buildings (Farm to Hall of Legends)."""
     total_clicks = 0
     clicks += 0
     for i in Y_CORDINATE:
+        click(X_CORDINATE[0], i + ADJUSTMENTS, clicks, CLICK_SPEED)
+    total_clicks = clicks * len(Y_CORDINATE)
+    return total_clicks
+
+
+def buyrandombuildingslist(clicks):
+    """Module To Buy All Buildings In Random Order."""
+    total_clicks = 0
+    clicks += 0
+    x = list(Y_CORDINATE)
+    shuffle(x)
+    for i in x:
         click(X_CORDINATE[0], i + ADJUSTMENTS, clicks, CLICK_SPEED)
     total_clicks = clicks * len(Y_CORDINATE)
     return total_clicks
@@ -101,14 +77,8 @@ def buybuildingsrev(clicks):
 
 if __name__ == "__main__":
     print("{} has been called from {}".format(__file__, __name__))
-    buyrandombuildings(0)
+    print("{} when called directly"
+          " does NOT click but shows location".format(__file__))
+    buyrandombuildingslist(0)
     buybuildings(0)
     buybuildingsrev(0)
-
-
-# help(click)
-# click(x=None, y=None, clicks=1, interval=0.0, button='left', duration=0.0,
-#       tween=<function linear at 0x10fff20e0>, pause=None, _pause=True)
-# help(moveTo)
-# moveTo(x=None, y=None, duration=0.0, tween=<function linear at 0x10fff20e0>,
-#        pause=None, _pause=True)

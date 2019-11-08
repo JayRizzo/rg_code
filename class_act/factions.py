@@ -357,6 +357,7 @@ def mercenary(clicks=None):
     for _ in range(99999999999999999):
         _start = datetime.now()
         total_upgrades_purchased += baum(UPGRADES)
+        total_buildings_purchased += brb(BUILDINGS)
         total_buildings_purchased += babre(BUILDINGS)
         total_buildings_purchased += brb(BUILDINGS)
         total_upgrades_purchased += baum(UPGRADES)

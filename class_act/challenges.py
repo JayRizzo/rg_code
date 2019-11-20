@@ -20,7 +20,7 @@ def dwarvenchallenge2(x_cordinate=None, y_cordinate=None):
         x_cordinate = 360
     if y_cordinate is None:
         y_cordinate = 311
-    print("%s Buying Initial Bloodline." % (time.ctime()))
+    print("{} Buying Initial Bloodline.".format(time.ctime()))
     click(x_cordinate, y_cordinate,
           clicks=1,
           interval=0.0037,

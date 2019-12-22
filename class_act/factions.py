@@ -15,7 +15,7 @@ from buybuildings import buybuildings as bab
 from buybuildings import buybuildingsrev as babre
 from buybuildings import buyrandombuildingslist as brb
 
-from call_count import CallCount
+# from call_count import CallCount
 from clickmove import clickmove
 from clickmove import strightclickin
 
@@ -26,7 +26,7 @@ UPGRADES = 1
 BUILDINGS = 10  # Module buys 10 in less than 1 sec each
 
 
-@CallCount
+# @CallCount
 def _now():
     """The Module Reports A Formatted Time."""
     ymd = (strftime("%Y%m%d_%H%M%S"))
@@ -57,7 +57,7 @@ def timerz(roundnum=0, _start=_now(), _end=_now(),
     last_total_time_elapsed = (_end - _start).total_seconds()
 
 
-@CallCount
+# @CallCount
 def fairy(clicks=None):
     """The Module Has Been Built for the Fairy Race."""
     total_upgrades_purchased = 0
@@ -87,10 +87,10 @@ def fairy(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 25
+        clicks += 250
 
 
-@CallCount
+# @CallCount
 def elven(clicks=None):
     """The Module Has Been Built for the Elven Race."""
     total_upgrades_purchased = 0
@@ -119,10 +119,10 @@ def elven(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 25
+        clicks += 250
 
 
-@CallCount
+# @CallCount
 def angels(clicks=None):
     """The Module Has Been Built for the Angels Race."""
     total_upgrades_purchased = 0
@@ -150,10 +150,10 @@ def angels(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 25
+        clicks += 250
 
 
-@CallCount
+# @CallCount
 def goblin(clicks=None):
     """The Module Has Been Built for the Goblin Race."""
     total_upgrades_purchased = 0
@@ -182,10 +182,10 @@ def goblin(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 25
+        clicks += 250
 
 
-@CallCount
+# @CallCount
 def undead(clicks=None):
     """The Module Has Been Built for the Undead Race."""
     total_upgrades_purchased = 0
@@ -214,10 +214,10 @@ def undead(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 25
+        clicks += 250
 
 
-@CallCount
+# @CallCount
 def demon(clicks=None):
     """The Module Has Been Built for the Demon Race."""
     total_upgrades_purchased = 0
@@ -246,10 +246,10 @@ def demon(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 25
+        clicks += 250
 
 
-@CallCount
+# @CallCount
 def titan(clicks=None):
     """The Module Has Been Built for the Titan Race."""
     total_upgrades_purchased = 0
@@ -278,10 +278,10 @@ def titan(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 25
+        clicks += 250
 
 
-@CallCount
+# @CallCount
 def druid(clicks=None):
     """The Module Has Been Built for the Druid Race."""
     total_upgrades_purchased = 0
@@ -313,7 +313,7 @@ def druid(clicks=None):
         clicks += 50
 
 
-@CallCount
+# @CallCount
 def faceless(clicks=None):
     """The Module Has Been Built for the Faceless Race."""
     total_upgrades_purchased = 0
@@ -342,10 +342,10 @@ def faceless(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 25
+        clicks += 250
 
 
-@CallCount
+# @CallCount
 def mercenary(clicks=None):
     """The Module Has Been Built for the Mercenary Race."""
     total_upgrades_purchased = 0
@@ -375,10 +375,10 @@ def mercenary(clicks=None):
                last_total_time_elapsed=last_total_time_elapsed
                )
         last_total_time_elapsed = (_end - _start).total_seconds()
-        clicks += 25
+        clicks += 250
 
 
-@CallCount
+# @CallCount
 def clickinupgrades(clicks=None, merx=False):
     """The Module Has Been Built for All races.
 
@@ -413,7 +413,7 @@ def clickinupgrades(clicks=None, merx=False):
                         _tseconds=total_time_elapsed,
                         )
               )
-        clicks += 25
+        clicks += 500
 
 
 if __name__ == "__main__":

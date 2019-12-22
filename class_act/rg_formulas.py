@@ -187,6 +187,19 @@ class Goblin(object):
         self.strong_currency(1e9)
 
 
+def veteran_figurine(secondz):
+    """PH."""
+    x = secondz / 1000000
+    print("{} % Chance each time you excavate.".format(round(x * 100, 2)))
+
+
+veteran_figurine(60)
+veteran_figurine(60 * 60 * 3)  # 3 hours for a 1% Chance
+veteran_figurine(60 * 60 * 24)  # 24 hours for a 8.64% Chance
+veteran_figurine(60 * 60 * 24 * 2)  # (2 days) 48 hours for a 17.28% Chance
+veteran_figurine(60 * 60 * 24 * 3)  # (3 days) 72 hours for a 25.92% Chance
+
+
 def dump(obj):
     """Dumper.
 
@@ -194,7 +207,7 @@ def dump(obj):
         obj (TYPE): Description.
     """
     for attr in dir(obj):
-        print("obj.%s = %r" % (attr, getattr(obj, attr)))
+        print("obj.{} = {}".format(attr, getattr(obj, attr)))
 
 
 if __name__ == "__main__":

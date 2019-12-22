@@ -19,7 +19,7 @@ class BuyAllRoyalExchanges(object):
 
     def buyallexchange():
         """The buyallexchange is to buy all available upgrades."""
-        print("%s Buying all Royal Exchanges." % (time.ctime()))
+        print("{} Buying all Royal Exchanges.".format(time.ctime()))
         # openroyalexchangebutton()
         # fairyexchange()
         # elvenexchange()

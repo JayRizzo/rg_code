@@ -9,13 +9,13 @@ To get the most from Dwarven upgrades.
 """
 
 from random import randint
-from random import uniform
+# from random import uniform
 
 from detectwindowsize import DetectWindowSize
 
 from pyautogui import click
 from pyautogui import easeInOutQuad
-from pyautogui import moveTo
+# from pyautogui import moveTo
 
 dws = DetectWindowSize()
 DetectWindowSize.main(dws)
@@ -27,7 +27,7 @@ ADJUST = dws.adjustments
 def strightclickin(count_me, click_speed=0.037):
     """Docs."""
     count_me += 0
-    moveTo(X_CORD, Y_CORD, round(uniform(1, 100) * .01, 2))
+    # moveTo(X_CORD, Y_CORD, round(uniform(1, 100) * .01, 2))
     click(X_CORD, Y_CORD, clicks=count_me, interval=click_speed, button='left')
     return count_me
 
@@ -35,7 +35,7 @@ def strightclickin(count_me, click_speed=0.037):
 def clickmove(count_me=50, click_speed=0.037):
     """"The clickmove is a Module is for Good Factions using Dwarven upgrade.
 
-    This func is required to keep making the most money while clicking.
+    This function is required to keep making the most money while clicking.
     you must move every 25-50 clicks otherwise you loose the %600 bonus.
     Required only for R2-R50?  Goes away after some point.
     """

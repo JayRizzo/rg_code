@@ -53,6 +53,55 @@ Call the `Core.py` file like so:
 
     # This only buys upgrades and make money
     python3 class_act/Core.py clickinupgrades
+    python3 class_act/Core.py mercinupgrades
 ```
 
 * `faction_research.md` is my log on all the different ways I have used to play the game for research and mercenaries go.  (in game verbiage)
+
+    # 1st Tier
+    # 2nd Tier
+    # 3rd Tier
+    # Spells
+       "SP:Fairy Chanting",  # Good
+       "SP:Moon Blessing",  # Good
+       "SP:God's Hand",  # Good
+
+       "SP:Goblin's Greed",  # Evil
+       "SP:Night Time",  # Evil
+       "SP:Hellfire Blast",  # Evil
+
+       "SP:Lightning Strike",  # Neutral
+       "SP:Grand Balance",  # Neutral
+       "SP:Brainwave",  # Neutral
+
+       "SP:Diamond Pickaxe",  # Good
+       "SP:Combo Strike",  # Evil
+       "SP:Dragon's Breath"
+
+    # Spellcraft
+    # Craftsmanship
+    # Divine
+    # Economics
+    # Alchemy
+    # Warfare
+
+
+    Specifics
+    ### Specific MERCs R75+
+
+    ##### Gem Multiplier
+    E495,E400,E460,E30,A250,A105,S460,S330,S105,S30,C175,C340,C500,
+
+    ##### Spell Duration Research
+    S200, A270, W1275
+    ##### Spell Cost Reduction
+    S1275, D200
+    ##### Mana Regen
+    S30, S105, S500
+    ##### MAX Mana
+    S30, S105, S400, S500
+    #### Offline
+    ##### Offline Diamonds
+    S435
+    ##### Offline Spell Casts
+    S50

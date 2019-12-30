@@ -42,7 +42,8 @@ if __name__ == "__main__":
                  "\n====== Others ======\n"
                  "Mercenary (mercs or merc)\n"
                  "\n====== Make Money ======\n"
-                 "clickinupgrades\n")
+                 "clickinupgrades\n"
+                 "mercinupgrades\n")
 
         if len(argv) == 2:
             # Good Factions
